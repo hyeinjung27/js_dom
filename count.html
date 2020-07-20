@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="title">글자 수 세기</h1>
+    <input type="text" id="input"/>
+    <h2 id="totalnum">공백 포함 글자 수: </h2>
+    <h2 id="textnum">공백 제외 글자 수: </h2>
+    <script>
+        const totalnum = document.querySelector('#totalnum')
+        const textnum = document.querySelector('#textnum')
+        const input = document.querySelector('#input')
+
+        input.addEventListener('keyup',function(event){
+            totalnum.textContent = "공백 포함 글자 수 :"+input.value.length;
+            textnum.textContent = "공백 제외 글자 수: "+input.value.replace(/\s/gi, "").length;
+        })
+    </script>
+</body>
+</html>
